@@ -2,10 +2,10 @@
 
 int main(int argc, char const *argv[])
 {
-    int geburtsjahr = 1815;
+    int geburtsjahr = 1912;
     while (true)
     {
-        std::cout << "Was ist das Geburtsjahr von Ada?" << std::endl;
+        std::cout << "Was ist das Geburtsjahr von Alan?" << std::endl;
         int guess = 0;
         std::cin >> guess;
         if (guess == geburtsjahr)
