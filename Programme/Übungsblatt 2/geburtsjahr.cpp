@@ -3,23 +3,24 @@
 int main(int argc, char const *argv[])
 {
     int geburtsjahr = 1912;
+    int jahr = 2023;
     while (true)
     {
-        std::cout << "Was ist das Geburtsjahr von Alan?" << std::endl;
+        std::cout << "Wie alt wäre Alan Turing dieses Jahr geworden?" << std::endl;
         int guess = 0;
         std::cin >> guess;
-        if (guess == geburtsjahr)
+        if (guess == jahr - geburtsjahr)
         {
             std::cout << "Richtig!" << std::endl;
             return 0;
         }
-        else if (geburtsjahr > guess)
+        else if (jahr - geburtsjahr > guess)
         {
-            std::cout << "Zu alt!" << std::endl;
+            std::cout << "Älter!" << std::endl;
         }
         else
         {
-            std::cout << "Zu jung!" << std::endl;
+            std::cout << "Jünger!" << std::endl;
         }
     }
 }
