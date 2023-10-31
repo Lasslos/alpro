@@ -7,9 +7,6 @@ double my_abs(const double& x) {
   return x;
 }
 
-double sqrt(const double& x) {
-    return sqrt(x, 0.0000000001);
-}
 // Calculates sqrt with newton's method
 double sqrt(const double& x, const double& accuracy) {
     double result = x;
@@ -18,6 +15,9 @@ double sqrt(const double& x, const double& accuracy) {
         result = (result + x / result) / 2;
     }
     return result;
+}
+double sqrt(const double& x) {
+  return sqrt(x, 0.0000000001);
 }
 
 int main() {

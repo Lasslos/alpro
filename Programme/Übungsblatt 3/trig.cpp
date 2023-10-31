@@ -9,9 +9,6 @@ double my_abs(const double& x) {
 
 // Calculates sin, cos, tan and cot with taylor series
 
-double sin(const double& x) {
-    return sin(x, 0.0000000001);
-}
 //Taylor Series of sin:
 // sin(x) = x - x^3/3! + x^5/5! - x^7/7! + ...
 double sin(const double& x, const double& accuracy) {
@@ -27,9 +24,10 @@ double sin(const double& x, const double& accuracy) {
   return result;
 }
 
-double cos(const double& x) {
-    return cos(x, 0.0000000001);
+double sin(const double& x) {
+  return sin(x, 0.0000000001);
 }
+
 //Taylor Series of cos:
 // cos(x) = 1 - x^2/2! + x^4/4! - x^6/6! + ...
 double cos(const double& x, const double& accuracy) {
@@ -46,29 +44,32 @@ double cos(const double& x, const double& accuracy) {
   return result;
 }
 
-double tan(const double& x) {
-    return tan(x, 0.0000000001);
+double cos(const double& x) {
+  return cos(x, 0.0000000001);
 }
+
 //Tan:
 // tan = sin/cos
 double tan(const double& x, const double& accuracy) {
   return sin(x, accuracy)/cos(x, accuracy);
 }
-
-double cot(const double& x) {
-    return cot(x, 0.0000000001);
+double tan(const double& x) {
+  return tan(x, 0.0000000001);
 }
 //Cot:
 // cot = cos/sin
 double cot(const double& x, const double& accuracy) {
   return cos(x, accuracy)/sin(x, accuracy);
 }
+double cot(const double& x) {
+  return cot(x, 0.0000000001);
+}
 
 int main() {
     //test sin, cos
     double x = 0.5;
-    double sinX = sin(x);
-    double cosX = cos(x);
+    double sinX = sin(x, 0.1);
+    double cosX = cos(x, 0.01);
     double tanX = tan(x);
     double cotX = cot(x);
     std::cout << "sin(" << x << ") = " << sinX << std::endl;
