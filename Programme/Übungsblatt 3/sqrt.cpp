@@ -1,17 +1,17 @@
 #include <iostream>
 
-double my_abs(double x) {
+double my_abs(const double& x) {
   if (x < 0) {
     return -x;
   }
   return x;
 }
 
-double sqrt(double x) {
+double sqrt(const double& x) {
     return sqrt(x, 0.0000000001);
 }
 // Calculates sqrt with newton's method
-double sqrt(double x, double accuracy) {
+double sqrt(const double& x, const double& accuracy) {
     double result = x;
 
     while (my_abs(result * result - x) > accuracy) {

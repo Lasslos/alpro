@@ -1,6 +1,6 @@
 #include <iostream>
 
-double my_abs(double x) {
+double my_abs(const double& x) {
   if (x < 0) {
     return -x;
   }
@@ -9,12 +9,12 @@ double my_abs(double x) {
 
 // Calculates sin, cos, tan and cot with taylor series
 
-double sin(double x) {
+double sin(const double& x) {
     return sin(x, 0.0000000001);
 }
 //Taylor Series of sin:
 // sin(x) = x - x^3/3! + x^5/5! - x^7/7! + ...
-double sin(double x, double accuracy) {
+double sin(const double& x, const double& accuracy) {
   double result = 0;
 
   double currentTerm = x;
@@ -27,12 +27,12 @@ double sin(double x, double accuracy) {
   return result;
 }
 
-double cos(double x) {
+double cos(const double& x) {
     return cos(x, 0.0000000001);
 }
 //Taylor Series of cos:
 // cos(x) = 1 - x^2/2! + x^4/4! - x^6/6! + ...
-double cos(double x, double accuracy) {
+double cos(const double& x, const double& accuracy) {
   double result = 0;
 
   double currentTerm = 1;
@@ -46,21 +46,21 @@ double cos(double x, double accuracy) {
   return result;
 }
 
-double tan(double x) {
+double tan(const double& x) {
     return tan(x, 0.0000000001);
 }
 //Tan:
 // tan = sin/cos
-double tan(double x, double accuracy) {
+double tan(const double& x, const double& accuracy) {
   return sin(x, accuracy)/cos(x, accuracy);
 }
 
-double cot(double x) {
+double cot(const double& x) {
     return cot(x, 0.0000000001);
 }
 //Cot:
 // cot = cos/sin
-double cot(double x, double accuracy) {
+double cot(const double& x, const double& accuracy) {
   return cos(x, accuracy)/sin(x, accuracy);
 }
 
